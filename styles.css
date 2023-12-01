@@ -25,7 +25,7 @@ time, mark, audio, video {
     vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
     display: block;
 }
@@ -91,9 +91,6 @@ h1, h2, h3{
     font-style: normal;
     font-weight: normal;
 }
-h1, h2, h3, p{
-padding-left: 37px;
-}
 
 h2, h3{
     font-size: 40px;
@@ -102,6 +99,11 @@ h2, h3{
 
 h4, p, q, small, nav, button, form{
     font-family: 'Montserrat', sans-serif;
+}
+
+#intro h2, #intro p, #testimonials, #contact, #plan h3, #about h3{
+    width: 80%;
+    margin: auto;
 }
 
 h4{
@@ -148,8 +150,17 @@ header h1{
 
 }
 
+body{
+    width: 100vw;
+}
+
 header p{
     grid-area: p;
+}
+
+header h1, header p{
+    width: 80%;
+    margin: auto;
 }
 
 nav label{
@@ -169,8 +180,6 @@ nav label{
     top: 30px;
 }
 
-
-
 nav h2 {
     visibility: hidden;
 }
@@ -188,7 +197,7 @@ nav h2 {
     margin-bottom: 10px;
     overflow: visible;
     height: 275px;
-    width: 85%;
+    width: 80%;
 
 }
 
@@ -217,7 +226,6 @@ margin-bottom: 15px;
 
 #plan section{
     background-color: var(--Teal);
-    max-width: 358px;
     width: 70%;
     height: 302px;
     border: var(--White) solid 3px;
@@ -252,7 +260,6 @@ margin-bottom: 15px;
 }
 
 #testimonials img{
-    height: 200px;
     width: 200px;
 }
 
@@ -323,11 +330,11 @@ margin-bottom: 15px;
 }
 
 #contact h3{
-    width: 360px;
     display: flex;
     align-items: baseline;
     justify-content: flex-start;
     gap: 15px;
+    flex-wrap: wrap;
 }
 
 .form-required{
@@ -342,17 +349,16 @@ margin-bottom: 15px;
     padding: 0;
 }
 
-#contact{
+/* #contact{
     display: flex;
     flex-direction: column;
     align-items: center;
-}
+} */
 
 #contact form, #names, #nums fieldset, #nums, #selects{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: start;
 }
 
 #contact label, legend{
@@ -362,11 +368,11 @@ margin-bottom: 15px;
     font-size: 20px;
 }
 
-input[type=text], input[type=email], input[type=tel], input[type=submit]{
-    width: 356px;
+form input{
     height: 67px;
     border: var(--Purple) solid 3px;
 }
+
 
 input[type=submit]{
     margin-top: 30px;
@@ -379,6 +385,8 @@ input[type=submit]{
     font-weight: bold;
     font-family: Montserrat;
 }
+
+
 
 .required{
     color: var(--Purple);
@@ -432,17 +440,13 @@ fieldset label{
     gap: 10px;
 }
 
+
+
 .radio-label{
     font-style: normal;
     font-weight: normal;
     font-size: 20px;
     text-transform: capitalize;
-}
-
-#destination, #travelTime{
-    width: 366px;
-    height: 75px;
-    border: var(--Purple) solid 3px;
 }
 
 ::placeholder, select {
@@ -472,17 +476,12 @@ fieldset label{
 
   /* Select style */
 
-  select {
-    appearance: none;
-    border: none;
-    padding: 0 1em 0 0;
-    margin: 0;
+  select{
+    padding-left: 1rem;
     width: 100%;
-    font-family: inherit;
-    font-size: inherit;
-    cursor: inherit;
-    line-height: inherit;
-  }
+    height: 67px;
+    border: var(--Purple) solid 3px;
+}
 
   .custom-select {
     width: 100%;
@@ -523,7 +522,7 @@ select:focus + .focus {
     border-radius: inherit;
   }
 
-
+/* --------------------------------------- medium screen ---------------------------------------*/
   @media screen and (max-width: 768px){
 
     header h1, header p{
@@ -578,10 +577,6 @@ select:focus + .focus {
 
   }
 
-
-
-
-
 @media screen and (min-width: 768px){
 
     h1, h2, h3, p{
@@ -612,6 +607,7 @@ select:focus + .focus {
         left: 236px;
         top: 56px;
         position: absolute;
+        width: 50%;
     }
 
     header p{
@@ -620,6 +616,7 @@ select:focus + .focus {
         position: absolute;
         line-height: 30px;
         font-size: 20px;
+        width: 50%;
     }
 
     nav ul{
@@ -662,55 +659,57 @@ select:focus + .focus {
     }
 
     #intro{
-        padding-left: 68px;
-        width: 90%;
+        width: 80%;
         margin: auto;
     }
 
-    #intro p{
+    #intro p, #intro h2{
         height: auto;
+        margin: 0;
+        width: 100%;
     }
 
     #img-grid{
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 1rem;
-        width: 90%;
     }
 
     picture{
         grid-column: 1/-1;
     }
 
-    #plan h3, #testimonials h3, #about h3 {
-        padding-left: 68px;
-    }
+ 
 
     #contact h3{
         margin-top: 40px;
         align-self: start;
-        padding-left: 68px;
     }
 
     #plan div, #testimonials div {
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-        justify-content: center;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-items: center;
+        align-items: start;
+        gap: 1rem;
     }
+
+    #plan div{
+        width: 80%;
+        margin: auto;
+    }
+
 
     #about div {
         display: flex;
         flex-wrap: wrap;
         flex-direction: row;
         justify-content: center;
-        gap: 5%;
     }
 
 
     #plan section{
-        width: 295px;
-        height: 302px;
+        width: 100%;
     }
 
     #contact {
@@ -718,20 +717,12 @@ select:focus + .focus {
     }
 
     form{
-        width: 80%;
         align-items: center;
         justify-content: center;
+        margin: auto;
     }
 
     #names, #nums, #selects{
-        width: 100%;
-    }
-
-    .custom-select{
-        width: 101%;
-    }
-
-    input[type=text], input[type=email], input[type=tel] {
         width: 100%;
     }
 
@@ -748,6 +739,7 @@ select:focus + .focus {
 
     input[type=submit]{
         align-self: flex-end;
+        width: 50%;
     }
 
     footer{
@@ -756,8 +748,10 @@ select:focus + .focus {
 
 }
 
+/* --------------------------------------- large screen ---------------------------------------*/
 
-@media screen and (min-width: 1250px){
+
+@media screen and (min-width: 1920px){
 
     body{
         display: block;
@@ -814,9 +808,13 @@ select:focus + .focus {
         width: 40%;
     }
 
-    #img-grid{
+    #intro h2{
         width: 40%;
-        height: 450px;
+    }
+
+    #img-grid{
+        width: 50%;
+        height: 100%;
         gap: 1rem;
     }
 
@@ -824,19 +822,23 @@ select:focus + .focus {
         height: 100%;
         width:  100%;
         object-fit: cover;
+        max-height: 370px;
     }
 
-
-    #plan div{
-        gap: 1%;
+    #plan div, #testimonials div{
+        grid-template-columns:1fr 1fr 1fr 1fr
     }
 
     #contact form {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: 1fr;
-        grid-column-gap: 5%;
-        grid-row-gap: 0px;
+        grid-column-gap: 1%;
+        align-items: start
+        }
+
+        #about div {
+            gap: 5%;
         }
 
         #names{
@@ -852,33 +854,18 @@ select:focus + .focus {
         }
 
         #selects{
-          display: flex;
-          flex-direction: column;
-          gap: 5%;
+          height: 100%;
+          justify-content: space-between
         }
 
-        #names, #nums, #selects{
-            width: 100%;
-        }
-
-        .custom-select{
-            width: 101%;
-        }
-
-        input[type=text], input[type=email], input[type=tel] {
-            width: 100%;
-        }
-
-        #destination, #travelTime{
-            width: 100%;
+        #contact label{
+            margin-top: 0;
         }
 
         #nums fieldset{
-            flex-direction: row;
-            justify-content: space-between;
-            width: 100%;
-            margin-top: 30px;
+            margin-top: 0;
         }
+
         fieldset label{
             gap: 0px;
         }
